@@ -1,0 +1,12 @@
+h1 {
+  text-align: center;
+}
+
+.draw-container {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  border: 5px solid black;
+}
