@@ -120,14 +120,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Lets DRAW!!!!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  var canvasRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  var clearCanvas = function clearCanvas() {
+    canvasRef.current.clear();
+  };
+
+  var undo = function undo() {
+    canvasRef.current.undo();
+  };
+
+  var onSave = function onSave() {
+    localStorage.setItem('drawing', canvasRef.current.getSaveData());
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Draw your design for your digital postcard!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "draw-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_canvas_draw__WEBPACK_IMPORTED_MODULE_1__.default, {
+    ref: canvasRef,
+    saveData: localStorage.getItem('drawing'),
     brushColor: "rgba(155,12,60, 0.5)",
-    canvasWidth: "50vw",
+    canvasWidth: "60vw",
     canvasHeight: "50vh",
     gridColor: "rgba(150,150,150,0)"
-  })));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: onSave
+  }, " SAVE "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: clearCanvas
+  }, " CLEAR "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: undo
+  }, " UNDO ")));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
