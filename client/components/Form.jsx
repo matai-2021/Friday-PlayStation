@@ -14,6 +14,7 @@ function Form ({ submitMessage }) {
   function handleChange (event) {
     const { name, value } = event.target
     setForm({
+      ...form,
       [name]: value
     })
   }
@@ -27,24 +28,24 @@ function Form ({ submitMessage }) {
 
   return (
     <>
-      {/* <form onSubmit={handleSubmit}> */}
-      <label htmlFor='to' style={ block }>to:
-        <input id='to' name='to'
-          value={form.to}
-          onChange={handleChange} />
-      </label>
-      <label htmlFor='from' style={ block }>from:
-        <input id='from' name='from'
-          value={form.from}
-          onChange={handleChange} />
-      </label>
-      <label htmlFor='message' style={ block }>message:
-        <input id='message' name='message'
-          value={form.message}
-          onChange={handleChange} />
-      </label>
-      <button onClick={handleSubmit}>Submit Message</button>
-      {/* </form> */}
+      <form onSubmit={handleSubmit}>
+        <label htmlFor='to' style={ block }>to:
+          <input id='to' name='to'
+            value={form.to}
+            onChange={handleChange} />
+        </label>
+        <label htmlFor='from' style={ block }>from:
+          <input id='from' name='from'
+            value={form.from}
+            onChange={handleChange} />
+        </label>
+        <label htmlFor='message' style={ block }>message:
+          <input id='message' name='message'
+            value={form.message}
+            onChange={handleChange} />
+        </label>
+        <button onClick={handleSubmit}>Submit Message</button>
+      </form>
     </>
   )
 }
