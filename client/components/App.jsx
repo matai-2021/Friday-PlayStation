@@ -1,40 +1,21 @@
 import React, { useRef } from 'react'
-import CanvasDraw from 'react-canvas-draw'
+import { Route } from 'react-router-dom'
+// import CanvasDraw from 'react-canvas-draw'
+import Canvas from './Canvas'
+// import Form from './Form'
+import Second from './Second'
 
 function App () {
-  const canvasRef = useRef(null)
-
-  const clearCanvas = () => {
-    canvasRef.current.clear()
-  }
-
-  const undo = () => {
-    canvasRef.current.undo()
-  }
-
-  const onSave = () => {
-    localStorage.setItem('drawing', canvasRef.current.getSaveData())
-  }
-
   return (
-    <div>
-      <h1>Draw your design for your digital postcard!</h1>
-      <div className="draw-container">
-        <CanvasDraw
-          ref={ canvasRef }
-          saveData={localStorage.getItem('drawing')}
-          brushColor="rgba(155,12,60, 0.5)"
-          canvasWidth="60vw"
-          canvasHeight="50vh"
-          gridColor= "rgba(150,150,150,0)"
-        />
+    <>
+      <div className='title'>
+        <h1>DESIGN YOUR OWN DIGITAL POSTCARD</h1>
       </div>
-      <div>
-        <button onClick={onSave}> SAVE </button>
-        <button onClick={clearCanvas}> CLEAR </button>
-        <button onClick={undo}> UNDO </button>
+      <div className='main'>
+        <Route exact path='/' component= { Second } />
+        <Route path='/canvas' component={ Canvas } />
       </div>
-    </div>
+    </>
   )
 }
 
