@@ -1,3 +1,13 @@
+
+body {
+  background-color: bisque;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.button-1 {
+  
+
+
 h1 {
   text-align: center;
 }
@@ -9,4 +19,5 @@ h1 {
 
 canvas {
   border: 5px solid black;
+
 }
