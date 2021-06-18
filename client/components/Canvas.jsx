@@ -24,7 +24,7 @@ function Canvas () {
           ref={ canvasRef }
           saveData={localStorage.getItem('drawing')}
           brushColor="rgba(155,12,60, 0.5)"
-          canvasWidth="60vw"
+          canvasWidth="55vw"
           canvasHeight="50vh"
           gridColor= "rgba(150,150,150,0)"
         />

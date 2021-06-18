@@ -13,6 +13,7 @@ const App = () => {
       ...form,
       { to, from, message }
     ])
+    // window.location.href = 'http://localhost:3000/#/canvas'
   }
   return (
     <>

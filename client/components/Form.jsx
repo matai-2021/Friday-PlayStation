@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 function Form ({ submitMessage }) {
   const block = { display: 'block' }
@@ -9,26 +9,25 @@ function Form ({ submitMessage }) {
     message: ''
   })
 
+  const history = useHistory()
+
   function handleChange (event) {
-    console.log('lalalalala')
-    console.log(event)
     const { name, value } = event.target
     setForm({
-      ...form,
       [name]: value
     })
   }
 
-  function handleSubmit (event) {
-    const { to: name, from , message} = form
-    console.log(form)
+  function handleSubmit () {
+    const { to: name, from, message } = form
     submitMessage(name, from, message)
-    setForm({ to: '', from: '' , message: ''})
-    event.preventDefault()
+    setForm({ to: '', from: '', message: '' })
+    history.push('/canvas')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+      {/* <form onSubmit={handleSubmit}> */}
       <label htmlFor='to' style={ block }>to:
         <input id='to' name='to'
           value={form.to}
@@ -44,8 +43,9 @@ function Form ({ submitMessage }) {
           value={form.message}
           onChange={handleChange} />
       </label>
-      <button>Submit message</button>
-    </form>
+      <button onClick={handleSubmit}>Submit Message</button>
+      {/* </form> */}
+    </>
   )
 }
 
