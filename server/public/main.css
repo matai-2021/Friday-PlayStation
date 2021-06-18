@@ -1,7 +1,15 @@
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 100px;
+
+}
 
 body {
   background-color: bisque;
   font-family: 'Courier New', Courier, monospace;
+  align-items: center;
+  display: flex;
 }
 
 .button-1 {
@@ -21,3 +29,4 @@ canvas {
   border: 5px solid black;
 
 }
+
