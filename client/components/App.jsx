@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
 import Canvas from './Canvas'
 import Form from './Form'
-import Details from './Details'
 import Instructions from './Instructions'
 
 const App = () => {
@@ -10,7 +9,6 @@ const App = () => {
 
   function submitMessage (to, from, message) {
     setForm([
-      ...form,
       { to, from, message }
     ])
     // window.location.href = 'http://localhost:3000/#/canvas'
@@ -23,8 +21,9 @@ const App = () => {
       <div className='main'>
         <Route exact path='/' component={ Instructions } />
         <Route exact path='/' render={() => <Form submitMessage={submitMessage}/>}/>
-        <Route exact path='/canvas' render={() => <Details form={form} />}/>
-        <Route path='/canvas' component={ Canvas } />
+        {/* <Route exact path='/canvas' render={() => <Details form={form} />}/> */}
+        <Route path='/canvas' render={() => <Canvas form={form}/>}/>
+        {/* <Route path='/canvas' component={ Canvas } /> */}
       </div>
     </>
   )

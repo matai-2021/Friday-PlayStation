@@ -29,20 +29,22 @@ function Form ({ submitMessage }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='to' style={ block }>to:
+        <label className="details" htmlFor='to' style={ block }>To:
           <input id='to' name='to'
             value={form.to}
             onChange={handleChange} />
         </label>
-        <label htmlFor='from' style={ block }>from:
+        <label className="details" htmlFor='from' style={ block }>From:
           <input id='from' name='from'
             value={form.from}
             onChange={handleChange} />
         </label>
-        <label htmlFor='message' style={ block }>message:
-          <input id='message' name='message'
+        <label className="details-large" htmlFor='message' style={ block }>Message:
+          <textarea rows="4" cols="50" id='message' name='message'
             value={form.message}
-            onChange={handleChange} />
+            onChange={handleChange}>
+              Write Your Message Here
+          </textarea>
         </label>
         <button onClick={handleSubmit}>Submit Message</button>
       </form>

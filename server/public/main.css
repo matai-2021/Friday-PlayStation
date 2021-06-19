@@ -9,10 +9,11 @@ body {
   background-color: bisque;
   font-family: 'Courier New', Courier, monospace;
   align-items: center;
+  justify-content: center;
   display: flex;
 }
 
-/* .button-1 {
+.button-1 {
   background-color: #4CAF50; 
   border: none;
   color: white;
@@ -20,22 +21,107 @@ body {
   text-align: center;
   display: inline-block;
   font-size: 16px;
-} */
+}
   
 h1 {
   text-align: center;
-  /* font-size: 60px;
+  font-size: 60px;
   color: rgb(20, 3, 65);
-  font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .draw-container {
-  display: flex;
-  justify-content: center;
+  border: 5px solid black;
+  background-color: white;
+  position: relative;
 }
 
 canvas {
-  border: 5px solid black;
-
+  width: auto;
 }
 
+canvas:hover{
+cursor:none;
+}
+
+.instructions {
+  text-align: center;
+  list-style-position: inside;
+}
+
+/* form {
+  overflow: hidden;
+} */
+
+.details {
+  float: center;
+  width: auto;
+}
+
+.details-large {
+  width: 1px;
+  display: block;
+}
+
+
+.overlap{
+  text-align: left;
+  position: absolute;
+  margin: 10px;
+  top: 0;
+  left: 0;
+}
+
+#to-details  {
+  text-align: top;
+}
+
+#message-details {
+  text-align: left;
+}
+
+#from-details {
+  text-align: bottom;
+}
+
+
+/*  Colours */
+
+.colours {
+  display: flex;
+}
+
+.colours > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.red {  
+  background-color: #ff0000;
+}
+
+.blue {
+  background-color: #3461eb;
+}
+
+.green {
+  background-color: #17b009;
+}
+
+.yellow {
+  background-color: #e2eb34;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.button-functions {
+  margin: 12px 0px;
+}
+
+button {
+  margin-right: 5px;
+}
